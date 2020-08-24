@@ -239,6 +239,6 @@ def KD_mini_ResNet_siamese_network(lambda_const):
     student.summary()
     student.compile(optimizer='adam',
                     loss=lambda y_true, y_pred: knowledge_distillation_loss_withBE(y_true, y_pred, lambda_const),
-                    metrics=[accuracy, categorical_crossentropy]
+                    metrics=[accuracy]
                     )
     return student
